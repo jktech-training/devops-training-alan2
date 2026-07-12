@@ -1,0 +1,38 @@
+name: Docker Build and Run
+
+on:
+  workflow_dispatch:
+
+jobs:
+  docker-build-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Image
+        run: |
+          docker build -t flask-sample-app ./docker/flask-app
+
+      - name: Run Docker Container
+        run: |
+          docker run -d \
+            --name flask-app \
+            -p 8080:5000 \
+            flask-sample-app
+
+      - name: Wait for Container
+        run: sleep 5
+
+      - name: Show Running Containers
+        run: docker ps
+
+      - name: Show Container Logs
+        run: docker logs flask-app
+
+      - name: Stop and Remove Container
+        if: always()
+        run: |
+          docker stop flask-app
+          docker rm flask-app
