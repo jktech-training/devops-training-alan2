@@ -1,0 +1,6 @@
+subscription_id     = "eefed234-8071-423e-8681-3533bc6c9d8e"
+resource_group_name = "rg-etl-project-alan"
+location            = "eastus"
+
+blob_connection_string   = "YOUR_STORAGE_CONNECTION_STRING"
+cosmos_connection_string = "YOUR_COSMOS_CONNECTION_STRING"
