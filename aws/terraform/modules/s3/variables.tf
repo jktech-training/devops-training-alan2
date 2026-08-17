@@ -1,13 +1,10 @@
 variable "bucket_name" {
-  type = string
-}
-
-variable "force_destroy" {
-  type    = bool
-  default = false
+  description = "Name of the S3 bucket"
+  type        = string
 }
 
 variable "tags" {
-  type    = map(string)
-  default = {}
+  description = "Tags for the S3 bucket"
+  type        = map(string)
+  default     = {}
 }

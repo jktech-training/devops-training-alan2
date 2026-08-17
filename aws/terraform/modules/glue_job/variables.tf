@@ -6,23 +6,34 @@ variable "role_arn" {
   type = string
 }
 
-variable "description" {
-  type = string
-}
-
 variable "glue_version" {
-  type    = string
-  default = "5.1"
+  type = string
 }
 
-variable "script_location" {
+variable "execution_class" {
   type = string
+}
+
+variable "worker_type" {
+  type = string
+}
+
+variable "number_of_workers" {
+  type = number
+}
+
+variable "timeout" {
+  type = number
+}
+
+variable "max_retries" {
+  type = number
 }
 
 variable "default_arguments" {
   type = map(string)
+}
 
-  default = {
-    "--job-language" = "python"
-  }
+variable "script_location" {
+  type = string
 }

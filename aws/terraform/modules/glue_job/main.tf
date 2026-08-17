@@ -1,17 +1,14 @@
 resource "aws_glue_job" "this" {
+  name     = var.job_name
+  role_arn = var.role_arn
 
-  name         = var.job_name
-  role_arn     = var.role_arn
-  description  = var.description
-  glue_version = var.glue_version
+  glue_version   = var.glue_version
+  execution_class = var.execution_class
 
-  execution_class = "STANDARD"
-
-  worker_type       = "G.1X"
-  number_of_workers = 2
-
-  timeout     = 10
-  max_retries = 0
+  worker_type       = var.worker_type
+  number_of_workers = var.number_of_workers
+  timeout           = var.timeout
+  max_retries       = var.max_retries
 
   default_arguments = var.default_arguments
 
