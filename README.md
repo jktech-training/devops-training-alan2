@@ -31,3 +31,7 @@ Git and GitHub practice Feature branch development Pull Requests and code review
 The repository will be updated continuously with practical exercises, scripts, workflow files, documentation, and project deliverables as the training progresses.
 
 Prerequisites Before starting, install: - Git - VS Code - WSL (Windows users) - GitHub account
+
+## Teams Notification Test
+
+This change is used to test GitHub Actions PR merge notifications to Microsoft Teams.
